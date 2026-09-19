@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+  <title>Wave divider</title>
+  <path d="M0 60 Q 60 20, 120 60 T 240 60 T 360 60 T 480 60 T 600 60 T 720 60 T 840 60 T 960 60 T 1080 60 T 1200 60 T 1320 60 T 1440 60 V120 H0 Z" fill="#1B8FA6" opacity="0.9"/>
+  <path d="M0 80 Q 60 50, 120 80 T 240 80 T 360 80 T 480 80 T 600 80 T 720 80 T 840 80 T 960 80 T 1080 80 T 1200 80 T 1320 80 T 1440 80 V120 H0 Z" fill="#0B5D7A" opacity="0.85"/>
+</svg>

@@ -1,1 +1,65 @@
-# mkredsea
+# MK Red Sea
+
+Marketing site for **Mootaz Kafy**, PADI Scuba Instructor based in Sharm El Sheikh, Red Sea.
+
+## Tech
+
+Plain static HTML/CSS/JS — no framework, no build step, no dependencies to install.
+Deployed on [Vercel](https://vercel.com) as a zero-config static site: `index.html` at the
+project root is served at `/` automatically, no `vercel.json` needed.
+
+## Local development
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000/`.
+
+## Project structure
+
+```
+index.html                 the site (single page, anchor-linked sections)
+assets/css/styles.css      all styling
+assets/js/main.js          mobile nav toggle, footer year, Instagram link wiring
+assets/logo/               the client's logo badge
+assets/favicon/            favicon + apple touch icon
+assets/icons/              turtle/fish/coral/wave/sun motifs cropped directly from the
+                            client's logo artwork (PNG, transparent background) +
+                            a plain wave divider and Instagram glyph (SVG)
+scripts/extract-assets.py  one-off script that pulled the logo/favicon out of the old
+                            base64-embedded holding page (see "Brand assets" below)
+mkredsea-holding.html
+mkredsea-holding2.html     earlier "coming soon" holding pages, kept for reference —
+                            not linked from the live site
+```
+
+## Brand assets — logo & favicon
+
+The logo and favicon are the client's own brand assets and are important to him — **do
+not redesign, recolor, or replace them without his sign-off.**
+
+- `assets/logo/mk-redsea-badge-original.png` — the master/archival copy, extracted
+  at full resolution exactly as supplied.
+- `assets/logo/mk-redsea-badge.png` — a resized copy of the same artwork (no
+  redesign), used on the page for faster load times.
+- `assets/favicon/favicon-32.png`, `favicon.ico`, `apple-touch-icon.png` — extracted
+  as-is from the original design, not newly created icons.
+
+Both were originally embedded as base64 data URIs in `mkredsea-holding.html` /
+`mkredsea-holding2.html`. `scripts/extract-assets.py` decodes them back out to real
+files; re-run it if the extracted copies ever need regenerating from the holding page.
+
+The section icons in `assets/icons/` (`icon-turtle.png`, `icon-fish.png`, `icon-coral.png`,
+`icon-sun.png`, `icon-wave-badge.png`) are cropped directly out of the same logo artwork —
+not redrawn — so they match the client's actual logo exactly.
+
+## Instagram
+
+The "DM to Book" call-to-action across the site all points to a single constant,
+`INSTAGRAM_URL`, defined once in `assets/js/main.js`. Update the handle there if it
+ever changes — every button/link on the page updates automatically.
+
+## Content
+
+On-page copy is sourced from the client's supplied bio, not reproduced here.
