@@ -75,11 +75,11 @@ img { max-width: 100%; display: block; }
 }
 .btn:hover { transform: translateY(-1px); }
 .btn-primary {
-  background: var(--coral-red);
+  background: linear-gradient(135deg, var(--ocean-blue), color-mix(in srgb, var(--reef-teal) 75%, black));
   color: var(--white);
-  box-shadow: 0 6px 16px rgba(201,56,50,0.28);
+  box-shadow: 0 6px 16px rgba(11,93,122,0.32);
 }
-.btn-primary:hover { box-shadow: 0 8px 20px rgba(201,56,50,0.36); }
+.btn-primary:hover { box-shadow: 0 8px 20px rgba(11,93,122,0.42); }
 .btn-primary svg { width: 18px; height: 18px; color: var(--white); }
 .btn-ghost {
   background: transparent;
@@ -214,7 +214,9 @@ section {
 
 /* ---------- Hero ---------- */
 .hero {
-  background: var(--deep-navy);
+  background: linear-gradient(180deg, rgba(10,46,66,0.88), rgba(10,46,66,0.94)), url('../photos/hero.jpg');
+  background-size: cover;
+  background-position: center;
   color: var(--white);
   padding: 64px 0 88px;
 }
@@ -251,7 +253,7 @@ section {
   flex-wrap: wrap;
 }
 .hero-badge {
-  width: clamp(180px, 40vw, 300px);
+  width: clamp(260px, 82vw, 340px);
   position: relative;
   z-index: 2;
   transform: rotate(-5deg);
@@ -285,7 +287,7 @@ section {
 .hero-wave svg { width: 100%; height: 60px; display: block; }
 
 /* ---------- About ---------- */
-.about .container {
+#about .container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
@@ -304,13 +306,28 @@ section {
   z-index: 0;
   pointer-events: none;
 }
-.about-badge {
-  width: 132px;
-  height: 132px;
+.about-visual {
+  position: relative;
+  max-width: 420px;
   margin: 0 auto;
+}
+.about-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px -20px rgba(10,46,66,0.4);
+}
+.about-badge {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: -18px;
+  bottom: -18px;
   border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
   background: linear-gradient(160deg, var(--foam), var(--white));
   border: 1px solid var(--hairline);
+  box-shadow: 0 12px 24px -12px rgba(10,46,66,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -366,23 +383,33 @@ section {
   position: relative;
 }
 .course-step {
-  background: var(--white);
-  border: 1px solid var(--hairline);
   border-radius: 6px 26px 26px 26px;
-  padding: 30px 26px;
   position: relative;
   z-index: 1;
+  overflow: hidden;
+  min-height: 340px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 16px 32px -20px rgba(10,46,66,0.45);
 }
+.course-step-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,46,66,0) 35%, rgba(10,46,66,0.92) 100%);
+}
+.course-step-content { position: relative; z-index: 1; padding: 26px; }
 .course-num {
   display: inline-block;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 1.6rem;
-  color: var(--coral-red);
+  color: var(--sun-gold);
   margin-bottom: 10px;
 }
-.course-step h3 { font-size: 1.05rem; margin-bottom: 6px; }
-.course-step p { color: var(--slate); margin: 0; font-size: 0.95rem; }
+.course-step h3 { color: var(--white); font-size: 1.15rem; margin-bottom: 6px; }
+.course-step p { color: rgba(255,255,255,0.85); margin: 0; font-size: 0.92rem; }
 .courses-note {
   margin-top: 28px;
   font-size: 0.85rem;
@@ -505,26 +532,15 @@ section {
   .hero-actions { justify-content: flex-start; }
   .hero-badge { flex: 0 0 340px; }
 
-  .about .container {
-    grid-template-columns: 180px 1fr;
+  #about .container {
+    grid-template-columns: 380px 1fr;
     text-align: left;
   }
-  .about-badge { margin: 0; }
+  .about-visual { margin: 0; }
 
   .why-grid { grid-template-columns: repeat(3, 1fr); }
 
-  .courses-path { grid-template-columns: repeat(3, 1fr); gap: 0; }
-  .course-step { margin: 0 -1px; }
-  .courses-path::before {
-    content: "";
-    position: absolute;
-    top: 42px;
-    left: 8%;
-    right: 8%;
-    height: 2px;
-    background: repeating-linear-gradient(90deg, var(--hairline) 0 10px, transparent 10px 20px);
-    z-index: 0;
-  }
+  .courses-path { grid-template-columns: repeat(3, 1fr); }
 
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 
