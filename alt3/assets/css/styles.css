@@ -170,11 +170,20 @@ section { padding: 88px 0; position: relative; }
   left: 0;
   width: clamp(150px, 30vw, 220px);
   height: clamp(150px, 30vw, 220px);
+  max-width: none;
   z-index: 5;
   filter: drop-shadow(0 20px 34px rgba(0,0,0,0.35));
 }
 #top span {
   margin-left: clamp(160px, 31vw, 230px);
+}
+
+/* Narrow phones (iPhone SE etc.): the wordmark + header CTA no longer
+   fit next to the enlarged floating logo. Drop them and rely on the
+   logo alone plus the hamburger's own "DM to Book" button. */
+@media (max-width: 639px) {
+  #top span { display: none; }
+  .header-actions .btn-pill { display: none; }
 }
 
 .header-actions {
@@ -239,7 +248,9 @@ section { padding: 88px 0; position: relative; }
   align-items: center;
   justify-content: space-between;
 }
-.nav-overlay-top .brand { color: #fff; }
+.nav-overlay-top .brand { color: #fff; gap: 16px; }
+.nav-overlay-top .brand img.nav-overlay-logo { width: clamp(100px, 26vw, 150px); height: clamp(100px, 26vw, 150px); }
+.nav-overlay-top .brand span { font-size: clamp(1.15rem, 4.2vw, 1.6rem); }
 .nav-close {
   width: 40px; height: 40px;
   border-radius: 10px;
@@ -273,7 +284,7 @@ section { padding: 88px 0; position: relative; }
   justify-content: space-between;
   padding-top: 20px;
 }
-.nav-overlay-bottom img { width: 32px; height: 32px; }
+.nav-overlay-bottom img { width: 44px; height: 44px; }
 .nav-overlay-bottom a {
   color: #fff;
   display: inline-flex;
