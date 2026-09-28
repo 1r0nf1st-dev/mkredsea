@@ -152,7 +152,7 @@ section { padding: 88px 0; position: relative; }
   text-decoration: none;
   color: var(--ink);
 }
-.brand img { width: 34px; height: 34px; }
+.brand img { width: 60px; height: 60px; }
 .brand span {
   font-family: 'Anton', sans-serif;
   font-size: 1.05rem;
@@ -259,7 +259,7 @@ section { padding: 88px 0; position: relative; }
   justify-content: space-between;
   padding-top: 20px;
 }
-.nav-overlay-bottom img { width: 32px; height: 32px; }
+.nav-overlay-bottom img { width: 56px; height: 56px; }
 .nav-overlay-bottom a {
   color: #fff;
   display: inline-flex;
@@ -287,6 +287,13 @@ section { padding: 88px 0; position: relative; }
   background: linear-gradient(180deg, rgba(5,10,14,0.35) 0%, rgba(5,10,14,0.55) 55%, rgba(5,10,14,0.92) 100%);
 }
 .hero .container { position: relative; z-index: 1; padding-bottom: 64px; }
+.hero-logo {
+  width: clamp(110px, 18vw, 170px);
+  height: auto;
+  margin-bottom: 26px;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.45));
+}
+.nav-overlay-top .brand img { width: 64px; height: 64px; }
 .hero .eyebrow { color: rgba(255,255,255,0.75); }
 .hero h1 {
   color: #fff;
@@ -455,7 +462,7 @@ section { padding: 88px 0; position: relative; }
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-.footer-brand img { width: 30px; height: 30px; }
+.footer-brand img { width: 56px; height: 56px; }
 .footer-nav {
   list-style: none;
   display: flex;
