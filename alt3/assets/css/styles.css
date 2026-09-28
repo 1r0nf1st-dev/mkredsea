@@ -425,18 +425,26 @@ section { padding: 88px 0; position: relative; }
   grid-template-columns: 1fr;
   gap: 16px;
 }
-.gallery-tile {
+.gallery-item {
+  position: relative;
+  margin: 0;
   aspect-ratio: 4 / 3;
-  border: 1.5px dashed var(--hairline);
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--slate);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  overflow: hidden;
+  background: var(--hairline);
+}
+.gallery-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item img { transition: none; }
+  .gallery-item:hover img { transform: none; }
 }
 
 /* ---------- Contact ---------- */
@@ -487,6 +495,7 @@ section { padding: 88px 0; position: relative; }
 /* ---------- Breakpoints ---------- */
 @media (min-width: 640px) {
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item--wide { grid-column: span 2; aspect-ratio: 16 / 9; }
   .nav-grid { grid-template-columns: repeat(2, 1fr); column-gap: 40px; }
 }
 
@@ -494,6 +503,7 @@ section { padding: 88px 0; position: relative; }
   .why-grid { grid-template-columns: repeat(3, 1fr); }
   .courses-grid { grid-template-columns: repeat(3, 1fr); }
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery-item--wide { aspect-ratio: auto; }
   .about-card { margin-top: -90px; }
 }
 

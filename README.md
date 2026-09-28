@@ -38,6 +38,11 @@ assets/favicon/            favicon + apple touch icon
 assets/icons/              turtle/fish/coral/wave/sun motifs cropped directly from the
                             client's logo artwork (PNG, transparent background) +
                             a plain wave divider and Instagram glyph (SVG)
+assets/photos/             hero + about/course photos (credits in SOURCES.md)
+assets/photos/originals/   the client's own photos exactly as supplied — never edited
+assets/photos/gallery/     colour-corrected web copies of those (+ 800px versions)
+scripts/process-photos.py  originals/ -> gallery/ + hero.jpg; re-run after adding photos
+                            (then run alt*/scripts/grade-photos.py to update the alts)
 scripts/extract-assets.py  one-off script that pulled the logo/favicon out of the old
                             base64-embedded holding page (see "Brand assets" below)
 mkredsea-holding.html
