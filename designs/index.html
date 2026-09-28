@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/designs/">
+<title>Design Options — MK Red Sea</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Internal review page: every design option side by side for the client. */
+  :root {
+    --bg: #f4f5f7;
+    --card: #fff;
+    --ink: #111827;
+    --muted: #5b6472;
+    --line: #e3e6ea;
+    --accent: #0a9396;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Inter", system-ui, sans-serif; line-height: 1.55; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 48px 0 24px; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 10px; letter-spacing: -0.02em; }
+  header p { color: var(--muted); max-width: 700px; margin: 0; }
+  h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); margin: 40px 0 16px; }
+  .grid { display: grid; gap: 20px; }
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(17, 24, 39, 0.1); }
+  .card img { display: block; width: 100%; height: auto; aspect-ratio: 768 / 382; object-fit: cover; object-position: top; border-bottom: 1px solid var(--line); }
+  .card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .card h3 { margin: 0; font-size: 1.15rem; }
+  .path { font-family: ui-monospace, monospace; font-size: 0.8rem; color: var(--accent); white-space: nowrap; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px; }
+  .tags span { font-size: 0.72rem; font-weight: 600; background: var(--bg); padding: 4px 10px; border-radius: 999px; }
+  .new { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #fff; background: var(--accent); padding: 3px 8px; border-radius: 6px; margin-left: 8px; vertical-align: middle; }
+  footer { padding: 48px 0; color: var(--muted); font-size: 0.85rem; }
+  @media (min-width: 720px) { .wrap { padding: 0 32px; } .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>MK Red Sea — design options</h1>
+    <p>Every version uses the same content, logo and photos, so you can compare purely on look and feel. Click any design to open the full site, and try each one on your phone too.</p>
+  </header>
+
+  <h2>New directions</h2>
+  <div class="grid">
+    <a class="card" href="/alt4/">
+      <img src="thumbs/alt4.jpg" alt="Editorial design preview" loading="lazy">
+      <div class="card-body">
+        <div class="card-top"><h3>Editorial<span class="new">New</span></h3><span class="path">/alt4</span></div>
+        <p>Laid out like a luxury travel-magazine feature: elegant serif headlines, sand-and-sea colours with a desert-rust accent, chapter numbers, a pull quote from the bio and photos captioned as “plates”. Positions Mootaz as a premium, personal instructor.</p>
+        <div class="tags"><span>Premium</span><span>Calm</span><span>Serif type</span><span>Light</span></div>
+      </div>
+    </a>
+    <a class="card" href="/alt5/">
+      <img src="thumbs/alt5.jpg" alt="Social profile design preview" loading="lazy">
+      <div class="card-body">
+        <div class="card-top"><h3>Social Profile<span class="new">New</span></h3><span class="path">/alt5</span></div>
+        <p>Built like an Instagram profile, since that's where bookings happen: logo avatar, stats, languages, highlight circles, a photo feed and tap-to-DM course cards. Phone-first; on desktop it floats over a blurred reef. The DM button docks to the bottom as you scroll.</p>
+        <div class="tags"><span>Mobile-first</span><span>Friendly</span><span>Logo colours</span><span>Fast to scan</span></div>
+      </div>
+    </a>
+    <a class="card" href="/alt6/">
+      <img src="thumbs/alt6.jpg" alt="Depth journey design preview" loading="lazy">
+      <div class="card-body">
+        <div class="card-top"><h3>Depth Journey<span class="new">New</span></h3><span class="path">/alt6</span></div>
+        <p>Scrolling the page is a dive. The water darkens from sunlit blue to the deep, every section sits at a depth (5 m, 12 m, 18 m…), a live depth gauge counts down as you scroll, and bubbles drift past. The most memorable and “experiential” option.</p>
+        <div class="tags"><span>Immersive</span><span>Animated</span><span>Dark</span><span>Storytelling</span></div>
+      </div>
+    </a>
+    <a class="card" href="/alt7/">
+      <img src="thumbs/alt7.jpg" alt="Dive centre design preview" loading="lazy">
+      <div class="card-body">
+        <div class="card-top"><h3>Dive Centre<span class="new">New</span></h3><span class="path">/alt7</span></div>
+        <p>Follows the structure of the big Sharm dive centres, tuned to turn visitors into bookings: trust checklist, stats strip, course cards with “best for”, a 3-step how-to-book, reviews, FAQ, and a sticky DM bar on phones.</p>
+        <div class="tags"><span>Conversion-focused</span><span>Clear</span><span>FAQ</span><span>Light</span></div>
+      </div>
+    </a>
+  </div>
+
+  <h2>Existing designs</h2>
+  <div class="grid">
+    <a class="card" href="/">
+      <img src="thumbs/main.jpg" alt="Main site preview" loading="lazy">
+      <div class="card-body">
+        <div class="card-top"><h3>Main site</h3><span class="path">/</span></div>
+        <p>Bright and friendly, with the logo's turtle, fish and coral icons used throughout.</p>
+        <div class="tags"><span>Friendly</span><span>Colourful</span><span>Light</span></div>
+      </div>
+    </a>
+    <a class="card" href="/alt/">
+      <img src="thumbs/alt.jpg" alt="Alt design preview" loading="lazy">
+      <div class="card-body">
+        <div class="card-top"><h3>Bold (red)</h3><span class="path">/alt</span></div>
+        <p>Dark, bold and monochrome with moody blue-grey photos, a red accent and a light/dark switch.</p>
+        <div class="tags"><span>Bold</span><span>Moody</span><span>Dark/light</span></div>
+      </div>
+    </a>
+    <a class="card" href="/alt2/">
+      <img src="thumbs/alt2.jpg" alt="Alt 2 design preview" loading="lazy">
+      <div class="card-body">
+        <div class="card-top"><h3>Bold (blue)</h3><span class="path">/alt2</span></div>
+        <p>The bold design with a friendlier blue accent instead of red.</p>
+        <div class="tags"><span>Bold</span><span>Moody</span><span>Dark/light</span></div>
+      </div>
+    </a>
+    <a class="card" href="/alt3/">
+      <img src="thumbs/alt3.jpg" alt="Alt 3 design preview" loading="lazy">
+      <div class="card-body">
+        <div class="card-top"><h3>Bold (blue) + big logo</h3><span class="path">/alt3</span></div>
+        <p>The blue bold design with the full-colour logo enlarged, floating over the header.</p>
+        <div class="tags"><span>Bold</span><span>Logo-forward</span><span>Dark/light</span></div>
+      </div>
+    </a>
+  </div>
+
+  <footer>Internal review page — not linked from the live site.</footer>
+</div>
+</body>
+</html>

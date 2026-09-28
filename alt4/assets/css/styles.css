@@ -1,0 +1,288 @@
+/* alt4 — "Editorial": a travel-magazine layout. Sand paper, deep-sea ink,
+   a rust accent taken from the Sinai desert, Fraunces serif display type,
+   chapters numbered like a feature story and photos captioned as plates. */
+
+:root {
+  --paper: #f5efe4;
+  --paper-deep: #ece3d3;
+  --ink: #0f2a36;
+  --ink-soft: #3d5561;
+  --rust: #b4532f;
+  --rule: rgba(15, 42, 54, 0.18);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Instrument Sans", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 116px; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 300; margin: 0; line-height: 1.08; letter-spacing: -0.01em; }
+em { font-style: italic; color: var(--rust); }
+p { margin: 0 0 1em; }
+
+.wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+.kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 26px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease;
+}
+.btn:hover { background: var(--rust); }
+.btn--light { background: var(--paper); color: var(--ink); }
+.btn--light:hover { background: #fff; }
+
+/* ---------- Masthead ---------- */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(245, 239, 228, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 84px;
+}
+.masthead-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+}
+.masthead-brand img { width: 64px; height: 64px; }
+.masthead-nav { display: none; list-style: none; margin: 0; padding: 0; gap: 28px; }
+.masthead-nav a { text-decoration: none; font-size: 0.88rem; color: var(--ink-soft); }
+.masthead-nav a:hover { color: var(--rust); }
+.link-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rust);
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+.masthead-meta {
+  display: none;
+  justify-content: center;
+  gap: 28px;
+  padding-bottom: 10px;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- Cover ---------- */
+.cover {
+  display: grid;
+  gap: 36px;
+  padding-top: 48px;
+  padding-bottom: 72px;
+}
+.cover h1 { font-size: clamp(2.5rem, 7vw, 5.2rem); margin-bottom: 24px; }
+.dek { font-size: 1.12rem; color: var(--ink-soft); max-width: 520px; margin-bottom: 30px; }
+.cover-plate { margin: 0; }
+.cover-plate img { width: 100%; aspect-ratio: 4 / 5; max-height: 72vh; object-fit: cover; object-position: 35% center; }
+
+figcaption {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  padding-top: 10px;
+  font-style: italic;
+  font-family: var(--serif);
+}
+figcaption span {
+  font-family: var(--sans);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  color: var(--rust);
+  margin-right: 8px;
+}
+
+/* ---------- Chapters ---------- */
+.chapter { padding-top: 72px; padding-bottom: 72px; }
+.chapter--tint { background: var(--paper-deep); }
+.chapter-head {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  border-top: 1px solid var(--ink);
+  padding-top: 18px;
+  margin-bottom: 44px;
+}
+.chapter-num {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--rust);
+  font-size: 1.4rem;
+  min-width: 2ch;
+}
+.chapter-head h2 { font-size: clamp(2rem, 5vw, 3.4rem); }
+
+/* Instructor */
+.instructor-grid { display: grid; gap: 44px; }
+.instructor-text { font-size: 1.08rem; max-width: 640px; }
+.dropcap::first-letter {
+  float: left;
+  font-family: var(--serif);
+  font-size: 4.6rem;
+  line-height: 0.82;
+  padding: 6px 10px 0 0;
+  color: var(--rust);
+}
+.pullquote {
+  margin: 36px 0;
+  padding: 22px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3.6vw, 2.2rem);
+  line-height: 1.25;
+}
+.instructor-side img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.figures { margin: 28px 0 0; display: grid; gap: 0; }
+.figures div {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.figures dt { font-family: var(--serif); font-size: 2.6rem; font-weight: 300; min-width: 2.6ch; color: var(--rust); line-height: 1; }
+.figures dd { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+
+/* Why */
+.reasons {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  counter-reset: reason;
+}
+.reasons li {
+  counter-increment: reason;
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  column-gap: 12px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.reasons li::before {
+  content: counter(reason, decimal-leading-zero);
+  grid-row: span 2;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--rust);
+  font-size: 1.3rem;
+}
+.reasons h3 { font-size: 1.45rem; font-weight: 500; margin-bottom: 8px; }
+.reasons p { margin: 0; color: var(--ink-soft); }
+
+/* Courses */
+.course { display: grid; gap: 22px; margin-bottom: 64px; align-items: center; }
+.course img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.course h3 { font-size: clamp(2rem, 4.6vw, 3.2rem); margin-bottom: 14px; }
+.course-text p:last-child { font-size: 1.12rem; color: var(--ink-soft); max-width: 420px; }
+.aside-note { font-family: var(--serif); font-style: italic; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 18px; }
+
+/* Plates */
+.plates { display: grid; gap: 32px 24px; }
+.plate { margin: 0; }
+.plate img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* Closing */
+.closing {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 96px 0;
+  text-align: center;
+}
+.closing-logo {
+  width: clamp(120px, 20vw, 160px);
+  height: clamp(120px, 20vw, 160px);
+  padding: 12px;
+  border-radius: 50%;
+  background: #fff; /* white disc keeps the navy lettering readable on dark backgrounds */
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+  margin: 0 auto 26px;
+}
+.closing .kicker { color: #e3a07f; }
+.closing h2 { font-size: clamp(2.4rem, 7vw, 4.8rem); margin-bottom: 22px; }
+.closing em { color: #e3a07f; }
+.closing p { max-width: 520px; margin: 0 auto 32px; color: rgba(245, 239, 228, 0.78); }
+.closing .closing-meta { margin: 32px auto 0; font-size: 0.9rem; }
+
+.colophon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  justify-content: space-between;
+  padding-top: 28px;
+  padding-bottom: 36px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Breakpoints ---------- */
+@media (min-width: 720px) {
+  .wrap { padding: 0 32px; }
+  .masthead-meta { display: flex; }
+  .reasons { grid-template-columns: repeat(2, 1fr); column-gap: 56px; }
+  .plates { grid-template-columns: repeat(2, 1fr); }
+  .plate--wide, .plate--pair-wide { grid-column: span 2; }
+  .plate--wide img, .plate--pair-wide img { aspect-ratio: 21 / 9; }
+}
+
+@media (min-width: 960px) {
+  .masthead-nav { display: flex; }
+  .cover { grid-template-columns: 1.1fr 0.9fr; align-items: center; gap: 64px; padding-top: 56px; }
+  .instructor-grid { grid-template-columns: 1.3fr 1fr; gap: 72px; }
+  .course { grid-template-columns: 1.4fr 1fr; gap: 56px; }
+  .course--flip img { order: 2; }
+  /* 6-col grid: wide plate, a row of three, then a row of two halves */
+  .plates { grid-template-columns: repeat(6, 1fr); }
+  .plate { grid-column: span 2; }
+  .plate--pair-wide { grid-column: span 2; }
+  .plate--pair-wide img { aspect-ratio: 4 / 3; }
+  .plate--half { grid-column: span 3; }
+  .plate--wide { grid-column: span 6; }
+}
