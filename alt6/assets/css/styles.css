@@ -132,8 +132,14 @@ main { position: relative; z-index: 2; }
   display: flex;
   align-items: flex-end;
   padding: 120px 0 80px;
-  background-size: cover;
-  background-position: 35% center;
+  background: #021420;
+}
+.surface-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .surface::after {
   content: "";
@@ -213,7 +219,7 @@ main { position: relative; z-index: 2; }
 
 .reef-grid { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
 .reef-grid img { width: 100%; height: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; }
-.reef-grid .tall { grid-column: span 2; aspect-ratio: 16 / 9; }
+.reef-grid .tall, .reef-grid .wide { grid-column: span 2; aspect-ratio: 16 / 9; }
 
 .abyss { padding: 140px 0 120px; }
 .abyss-logo {
@@ -237,7 +243,8 @@ main { position: relative; z-index: 2; }
   .reef-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); }
   .reef-grid .tall { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
   .reef-grid img:not(.tall) { aspect-ratio: auto; }
-  .reef-grid img:nth-child(4), .reef-grid img:nth-child(5) { aspect-ratio: 4 / 3; }
+  .reef-grid .wide { grid-column: auto; }
+  .reef-grid img:nth-child(n+4) { aspect-ratio: 4 / 3; }
 }
 
 @media (min-width: 1000px) {

@@ -45,7 +45,7 @@ h1, h2, h3, p { margin: 0; }
 
 /* ---------- Cover + avatar ---------- */
 .cover { position: relative; margin-bottom: 84px; }
-.cover-photo { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.cover-photo { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .avatar {
   position: absolute;
   left: 50%;

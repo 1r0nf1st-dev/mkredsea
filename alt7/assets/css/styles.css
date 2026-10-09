@@ -136,7 +136,7 @@ p { margin: 0 0 1em; }
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .hero-media { position: relative; }
-.hero-media > img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow); }
+.hero-media > video { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 24px; box-shadow: var(--shadow); }
 .hero-card {
   position: absolute;
   left: 16px; bottom: -22px;

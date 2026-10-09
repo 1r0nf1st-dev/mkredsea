@@ -41,6 +41,9 @@ assets/icons/              turtle/fish/coral/wave/sun motifs cropped directly fr
 assets/photos/             hero + about/course photos (credits in SOURCES.md)
 assets/photos/originals/   the client's own photos exactly as supplied — never edited
 assets/photos/gallery/     colour-corrected web copies of those (+ 800px versions)
+assets/video/              hero.mp4 + hero-poster.jpg — the looping hero video, shared by
+                            every design via the absolute path /assets/video/ (see "Hero video")
+videos/                    the client's video exactly as supplied — never edited
 scripts/process-photos.py  originals/ -> gallery/ + hero.jpg; re-run after adding photos
                             (then run alt*/scripts/grade-photos.py to update the alts)
 scripts/extract-assets.py  one-off script that pulled the logo/favicon out of the old
@@ -81,6 +84,22 @@ the client to compare.
 
 alt4–alt7 use the colour-corrected photos; the "Best for" lines, booking steps and FAQ
 wording in alt7 were written from the existing bio and should be checked with the client.
+
+## Hero video
+
+Every design plays `assets/video/hero.mp4` at the top (muted, looping, autoplaying;
+visitors with "reduce motion" switched on see the still `hero-poster.jpg` instead). It is
+cut from `videos/mkredsea-vid1.MP4`: the opening MKREDSEA.COM title card and the GoPro
+outro are trimmed off and the audio track is dropped. To regenerate it (needs ffmpeg):
+
+```bash
+ffmpeg -ss 2.47 -to 24.77 -i videos/mkredsea-vid1.MP4 -an -c:v libx264 -preset slow \
+  -crf 26 -pix_fmt yuv420p -movflags +faststart assets/video/hero.mp4
+ffmpeg -i assets/video/hero.mp4 -frames:v 1 -q:v 3 assets/video/hero-poster.jpg
+```
+
+The snapper photo that used to be the hero (`assets/photos/hero.jpg`) is still in each
+design's gallery.
 
 ## Brand assets — logo & favicon
 

@@ -51,3 +51,10 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 window.addEventListener('resize', updateDepth);
 updateDepth();
+
+// Hero video: visitors who ask for reduced motion get the still poster frame instead.
+const heroVideo = document.querySelector('[data-hero-video]');
+if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroVideo.removeAttribute('autoplay');
+  heroVideo.pause();
+}

@@ -8,3 +8,10 @@ document.querySelectorAll('[data-instagram-cta]').forEach((el) => {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Hero video: visitors who ask for reduced motion get the still poster frame instead.
+const heroVideo = document.querySelector('[data-hero-video]');
+if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroVideo.removeAttribute('autoplay');
+  heroVideo.pause();
+}

@@ -115,7 +115,7 @@ p { margin: 0 0 1em; }
 .cover h1 { font-size: clamp(2.5rem, 7vw, 5.2rem); margin-bottom: 24px; }
 .dek { font-size: 1.12rem; color: var(--ink-soft); max-width: 520px; margin-bottom: 30px; }
 .cover-plate { margin: 0; }
-.cover-plate img { width: 100%; aspect-ratio: 4 / 5; max-height: 72vh; object-fit: cover; object-position: 35% center; }
+.cover-plate video { display: block; width: 100%; aspect-ratio: 4 / 5; max-height: 72vh; object-fit: cover; }
 
 figcaption {
   font-size: 0.78rem;
@@ -278,7 +278,7 @@ figcaption span {
   .instructor-grid { grid-template-columns: 1.3fr 1fr; gap: 72px; }
   .course { grid-template-columns: 1.4fr 1fr; gap: 56px; }
   .course--flip img { order: 2; }
-  /* 6-col grid: wide plate, a row of three, then a row of two halves */
+  /* 6-col grid: wide plate, a row of three, a row of two halves, then a closing wide plate */
   .plates { grid-template-columns: repeat(6, 1fr); }
   .plate { grid-column: span 2; }
   .plate--pair-wide { grid-column: span 2; }

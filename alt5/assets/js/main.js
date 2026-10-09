@@ -18,3 +18,10 @@ if (dock && actions && 'IntersectionObserver' in window) {
     dock.classList.toggle('show', !entry.isIntersecting && entry.boundingClientRect.top < 0);
   }).observe(actions);
 }
+
+// Hero video: visitors who ask for reduced motion get the still poster frame instead.
+const heroVideo = document.querySelector('[data-hero-video]');
+if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroVideo.removeAttribute('autoplay');
+  heroVideo.pause();
+}

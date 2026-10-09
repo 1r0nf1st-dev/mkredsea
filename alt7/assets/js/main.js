@@ -32,3 +32,10 @@ if (mobileBar && heroActions && 'IntersectionObserver' in window) {
 } else if (mobileBar) {
   mobileBar.classList.add('show');
 }
+
+// Hero video: visitors who ask for reduced motion get the still poster frame instead.
+const heroVideo = document.querySelector('[data-hero-video]');
+if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroVideo.removeAttribute('autoplay');
+  heroVideo.pause();
+}
