@@ -42,6 +42,10 @@ SEO files: `robots.txt` (allows everything, points to the sitemap), `sitemap.xml
 public page, and update `lastmod` when a page changes). The `<head>` of `index.html` has the
 canonical URL, link-preview (Open Graph/Twitter) tags and JSON-LD structured data.
 
+Analytics: Vercel Web Analytics is enabled in the Vercel dashboard and loaded by the two
+script tags at the end of `<head>` (the plain-HTML version, with no npm package). The script only
+exists on Vercel deployments, so it 404s on the local server, which is expected.
+
 ## Project structure
 
 ```
