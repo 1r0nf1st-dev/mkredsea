@@ -1,0 +1,25 @@
+# Files kept in the repo but NOT published to mkredsea.com.
+# They stay on disk and in git. View them locally with:  python3 -m http.server 8000
+# (see README "Local development"), e.g. http://localhost:8000/designs/
+
+# Design options and the comparison page
+/alt
+/alt2
+/alt3
+/alt4
+/alt5
+/alt6
+/alt7
+/designs
+
+# Old "coming soon" holding pages
+/mkredsea-holding.html
+/mkredsea-holding2.html
+
+# Internal notes, source material and scripts
+/README.md
+/scripts
+/videos
+/assets/photos/originals
+/assets/photos/SOURCES.md
+.DS_Store
